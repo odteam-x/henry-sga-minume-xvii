@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Henry Gómez · MINUME XVII</title>
+  <meta name="description" content="Propuesta Secretaría General Académica — MINUME XVII. Un MINUME que Deja Huellas.">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&family=Josefin+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap"
+        rel="stylesheet">
+  <!-- Critical resource preloads -->
+  <link rel="preload" href="Huella.png"     as="image">
+  <link rel="preload" href="logo.png"       as="image">
+  <link rel="preload" href="Henry.jpeg"     as="image">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ════════ INTRO OVERLAY ════════ -->
+  <div class="site-intro" id="siteIntro" role="dialog" aria-modal="true" aria-label="Pantalla de bienvenida">
+    <div class="intro-bg-glow"    aria-hidden="true"></div>
+    <div class="intro-lines-bg"   aria-hidden="true"></div>
+    <div id="introParticles"      aria-hidden="true"></div>
+
+    <!-- Floating orbs -->
+    <div class="intro-orb intro-orb-1" aria-hidden="true"></div>
+    <div class="intro-orb intro-orb-2" aria-hidden="true"></div>
+    <div class="intro-orb intro-orb-3" aria-hidden="true"></div>
+
+    <!-- Central fingerprint -->
+    <div class="intro-fingerprint" aria-hidden="true">
+      <img src="Huella.png" fetchpriority="high" decoding="async" alt="">
+      <div class="intro-scan"></div>
+      <div class="intro-ring intro-ring-1" aria-hidden="true"></div>
+      <div class="intro-ring intro-ring-2" aria-hidden="true"></div>
+    </div>
+
+    <!-- All text centered -->
+    <div class="intro-text">
+      <div class="intro-eyebrow">Propuesta para la Secretaría General Académica</div>
+      <div class="intro-logo">
+        <div class="intro-logo-row">
+          <span class="intro-word-1">MINUME</span>
+        </div>
+        <span class="intro-num">XVII</span>
+      </div>
+      <div class="intro-sub">"Un MINUME que Deja Huellas"</div>
+      <div class="intro-divider" aria-hidden="true"></div>
+      <div class="intro-candidate">Henry Gómez · Candidato a SGA</div>
+    </div>
+
+    <button class="intro-enter" id="introEnter">
+      Entrar <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+    </button>
+    <button class="intro-skip" id="introSkip">Saltar intro</button>
+  </div>
+  <div class="cursor"      id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Navegación principal">
+    <a href="#hero" class="nav-logo">
+      <img src="logo.png" alt="MINUME XVII logo" fetchpriority="high" decoding="async">
+      <span class="nav-logo-text">Henry Gómez</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#que-es">La Propuesta</a></li>
+      <li><a href="#henry">Henry</a></li>
+      <li><a href="#esferas">El Olimpo</a></li>
+      <li><a href="#academia">Academia</a></li>
+      <li><a href="#actividades">Noche Gala</a></li>
+      <li><a href="#eje2030">Eje 2030</a></li>
+      <li><a href="#bid">BID</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMobile">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile" id="navMobile" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <button class="nav-mobile-close" id="navMobileClose" aria-label="Cerrar menú">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#que-es">La Propuesta</a>
+    <a href="#henry">Henry Gómez</a>
+    <a href="#esferas">El Olimpo</a>
+    <a href="#academia">Academia</a>
+    <a href="#actividades">Noche Gala</a>
+    <a href="#eje2030">Eje 2030</a>
+    <a href="#bid">BID</a>
+  </div>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section id="hero">
+    <div class="burned-bg"></div>
+    <div class="burned-vignette"></div>
+    <div class="burned-bottom"></div>
+    <div class="grain"></div>
+
+    <div class="hero-lines" aria-hidden="true">
+      <div class="hero-line" style="left:7%;  height:42vh;top:20%;animation-delay:0s"></div>
+      <div class="hero-line" style="left:15%; height:26vh;top:33%;animation-delay:1.8s"></div>
+      <div class="hero-line" style="right:7%; height:36vh;top:24%;animation-delay:1.1s"></div>
+      <div class="hero-line" style="right:18%;height:20vh;top:44%;animation-delay:2.5s"></div>
+      <div class="hero-line" style="left:50%;height:28vh;top:12%;animation-delay:.6s"></div>
+    </div>
+
+    <div class="hero-video" aria-hidden="true">
+      <iframe
+        src="https://www.youtube.com/embed/mcgli2TEK1I?autoplay=1&mute=1&loop=1&playlist=mcgli2TEK1I&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&enablejsapi=1"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen
+        title="">
+      </iframe>
+    </div>
+    <div class="hero-video-overlay" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge-dot" aria-hidden="true"></span>
+        Secretaría General Académica · MINUME XVII
+      </div>
+
+      <h1 class="hero-title">
+        Un MINUME
+        <span class="line-green">que Deja Huellas</span>
+        <span class="line-thin">"No se trata de ocupar un espacio, sino de qué haces con él."</span>
+      </h1>
+
+      <div class="hero-divider" aria-hidden="true"></div>
+
+      <p class="hero-sub">
+        Una propuesta que marca lo visible y se inscribe en lo emocional,
+        formativo y humano de cada joven dominicano.
+      </p>
+
+      <a href="#que-es" class="hero-cta">
+        Conoce la propuesta
+        <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+      </a>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <div class="scroll-track"></div>
+    </div>
+
+    <div class="deco-corner deco-barco" aria-hidden="true">
+      <img src="barco.png" alt="" class="barco" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════════════ ¿POR QUÉ UN MINUME QUE DEJA HUELLAS? ════════════════ -->
+  <section id="que-es">
+    <div class="quees-bg" aria-hidden="true"></div>
+    <div class="quees-overlay" aria-hidden="true"></div>
+    <div class="section-inner" style="position:relative;z-index:2">
+
+      <div class="section-header">
+        <span class="label reveal">La Propuesta</span>
+        <h2 class="heading reveal">
+          ¿Por qué un MINUME<br>que <em>Deja Huellas</em>?
+        </h2>
+      </div>
+
+      <p class="quees-body reveal">
+        Un MINUME que deja huellas no es simplemente un evento académico. Es un punto
+        de inflexión en la vida de cada joven que lo vive. Buscamos marcar lo visible
+        para inscribirnos en lo emocional, en lo formativo y en la experiencia personal
+        de cada participante. No se queda en las paredes del auditorio — se queda en ellos.
+      </p>
+
+      <div class="mv-grid reveal reveal-delay-1">
+        <div class="mv-card mv-mision">
+          <div class="mv-icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></div>
+          <div class="mv-label">Misión</div>
+          <h3 class="mv-title">Transformar vidas desde la experiencia vivida</h3>
+          <p class="mv-text">
+            Garantizar que cada delegado, mesa directiva y voluntario que pase por MINUME XVII
+            se lleve consigo una experiencia formativa auténtica, memorable y transformadora.
+            No imponemos liderazgo — lo revelamos.
+          </p>
+        </div>
+        <div class="mv-card mv-vision">
+          <div class="mv-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></div>
+          <div class="mv-label">Visión</div>
+          <h3 class="mv-title">Construir un legado emocional e intelectual duradero</h3>
+          <p class="mv-text">
+            Ser el modelo de referencia en el mundo de los Modelos de Naciones Unidas 
+            a nivel nacional en la República Dominicana; reconocido no solo por su 
+            excelencia académica, sino por la forma en que cada edición deja una marca 
+            indeleble en la trayectoria personal de sus participantes.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="deco-corner deco-timon" aria-hidden="true">
+      <img src="timon.png" alt="" class="timon" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════════════ MINUME EMPIEZA CONTIGO ════════════════ -->
+  <section id="minume-contigo">
+    <div class="contigo-bg"></div>
+    <div class="contigo-overlay"></div>
+    <div class="contigo-content reveal">
+      <div class="contigo-label">El punto de partida</div>
+      <h2 class="contigo-title">MINUME empieza<br><em>contigo</em></h2>
+      <p class="contigo-sub">
+        Quien lidera esta propuesta lo ha vivido desde adentro. Conoce el peso de una mesa directiva,
+        la energía de un comité bien facilitado y el valor de un delegado que descubre su voz por primera vez.
+      </p>
+      <a href="#henry" class="contigo-cta">
+        Conoce a Henry <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="contigo-gradient-bottom" aria-hidden="true"></div>
+  </section>
+
+  <!-- ════════════════ HENRY ════════════════ -->
+  <section id="henry">
+    <canvas class="section-canvas" id="henryCanvas" aria-hidden="true"></canvas>
+
+    <div class="henry-photo-panel" aria-hidden="true">
+      <img src="Henry.jpeg" fetchpriority="high" decoding="async" alt="Fotografía de Henry Gómez" class="henry-panel-img">
+      <div class="henry-panel-overlay"></div>
+      <div class="henry-panel-tag">Postulante a SGA · MINUME XVII</div>
+    </div>
+
+    <div class="henry-content-panel">
+
+      <div class="henry-bio reveal">
+        <span class="label">¿Quién es Henry?</span>
+        <h2 class="heading">
+          Liderazgo construido<br>
+          desde la <em>elección consciente</em>
+        </h2>
+        <p>
+          Desde muy joven entendí que el liderazgo no empieza cuando te dan un título,
+          sino cuando decides involucrarte. Mi historia se construye desde la elección
+          consciente de participar, asumir responsabilidades y hacer las cosas con intención,
+          incluso cuando nadie te está mirando.
+        </p>
+        <p>
+          Mi formación en Contabilidad —culminada <em>Summa Cum Laude</em>— y mi participación
+          como <strong>Director de la Segunda Comisión (AG2)</strong> de la Asamblea General
+          reforzaron algo que ya venía construyendo: la importancia del criterio técnico,
+          la ética y el análisis basado en rigor académico.
+        </p>
+      </div>
+
+      <div class="henry-stats reveal reveal-delay-1">
+        <div class="hstat">
+          <span class="hstat-num">+10</span>
+          <span class="hstat-label">Mejor Mesa Directiva</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <span class="hstat-num">+6</span>
+          <span class="hstat-label">Años voluntario PLERD</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <span class="hstat-num">AG2</span>
+          <span class="hstat-label">Comisión favorita</span>
+        </div>
+      </div>
+
+      <div class="henry-tl reveal reveal-delay-2">
+        <div class="htl-item">
+          <div class="htl-year">2023</div>
+          <div class="htl-line" aria-hidden="true"></div>
+          <div class="htl-body">
+            <div class="htl-role">Vicepresidente — Banco Mundial</div>
+            <div class="htl-desc">Lideró la vicepresidencia del Banco Mundial, debatiendo financiamiento al desarrollo y estrategias de reducción de pobreza a escala global.</div>
+            <span class="tl-badge"><i class="fa-solid fa-star" aria-hidden="true"></i> Mejor Mesa Directiva</span>
+          </div>
+        </div>
+        <div class="htl-item">
+          <div class="htl-year">2024</div>
+          <div class="htl-line" aria-hidden="true"></div>
+          <div class="htl-body">
+            <div class="htl-role">Director Adjunto — OCDE</div>
+            <div class="htl-desc">Dirigió adjuntamente el comité de la OCDE, facilitando debates sobre políticas públicas comparadas y estándares tributarios internacionales entre países miembros.</div>
+            <span class="tl-badge"><i class="fa-solid fa-star" aria-hidden="true"></i> Mejor Mesa Directiva</span>
+          </div>
+        </div>
+        <div class="htl-item">
+          <div class="htl-year">2025</div>
+          <div class="htl-line" aria-hidden="true"></div>
+          <div class="htl-body">
+            <div class="htl-role">Director — Segunda Comisión (AG2)</div>
+            <div class="htl-desc">Dirigió la Segunda Comisión de la Asamblea General (Asuntos Económicos y Financieros), uno de los comités de mayor densidad técnica, con deliberaciones centradas en la Agenda 2030.</div>
+            <span class="tl-badge"><i class="fa-solid fa-star" aria-hidden="true"></i> Mejor Mesa Directiva</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="deco-corner deco-timon" aria-hidden="true">
+      <img src="timon.png" alt="" class="timon" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════ QUOTE BREAK 1 ════════ -->
+  <div class="quote-break quote-break-impact" aria-hidden="false">
+    <div class="quote-break-inner">
+      <blockquote class="qb-text qb-impact">
+        <span class="qb-line-1">Este MINUME busca tocar vidas,</span>
+        <span class="qb-line-2">transformar trayectorias,</span>
+        <span class="qb-line-3">y construir un <em>legado</em> emocional e intelectual</span>
+        <span class="qb-line-4">en cada joven que vive la experiencia.</span>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- ════════════════ VISION ════════════════ -->
+  <section id="vision">
+    <canvas class="section-canvas" id="visionCanvas" aria-hidden="true"></canvas>
+    <div class="section-inner">
+
+      <div class="vision-header">
+        <div>
+          <div class="section-header">
+            <span class="label reveal">La Visión</span>
+            <h2 class="heading reveal">Un MINUME<br>que <em>Deja Huellas</em></h2>
+          </div>
+        </div>
+        <div>
+          <p class="vision-quote reveal">
+            "No un evento. <strong>Un punto de inflexión</strong>
+            en la vida de cada joven dominicano que lo vive."
+          </p>
+          <p class="vision-body reveal reveal-delay-1">
+            El MINUME que deja huellas es aquel que logra convertirse en recuerdo, 
+            en historia y en punto de quiebre para que la construcción de la identidad 
+            de los jóvenes no quede en las paredes de un auditorio, sino que se quede en ellos.
+          </p>
+        </div>
+      </div>
+
+      <div class="pillars reveal">
+        <div class="pillar">
+          <button class="pillar-toggle" aria-expanded="false" aria-label="Expandir pilar">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </button>
+          <div class="pillar-num">01</div>
+          <div class="pillar-icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+          <div class="pillar-title">Transformar vidas desde lo vivido</div>
+          <div class="pillar-short">El legado real es lo que te queda adentro.</div>
+          <div class="pillar-expanded">
+            Este MINUME no busca ser recordado por cifras ni resoluciones, sino por la forma
+            en que cada experiencia vivida transforma a los participantes. No imponer liderazgo,
+            sino permitir que surja. No enseñar identidad, sino revelarla.
+          </div>
+        </div>
+        <div class="pillar">
+          <button class="pillar-toggle" aria-expanded="false" aria-label="Expandir pilar">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </button>
+          <div class="pillar-num">02</div>
+          <div class="pillar-icon"><i class="fa-solid fa-link" aria-hidden="true"></i></div>
+          <div class="pillar-title">Crear vínculos que permanezcan</div>
+          <div class="pillar-short">MINUME es un movimiento juvenil, no solo un evento.</div>
+          <div class="pillar-expanded">
+            Los lazos formados en comités se convierten en amistades, proyectos, alianzas o
+            vocaciones profesionales. Construimos atmósferas donde el joven sienta orgullo,
+            pertenencia y crecimiento compartido. Together To Be Better.
+          </div>
+        </div>
+        <div class="pillar">
+          <button class="pillar-toggle" aria-expanded="false" aria-label="Expandir pilar">
+            <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          </button>
+          <div class="pillar-num">03</div>
+          <div class="pillar-icon"><i class="fa-solid fa-fire" aria-hidden="true"></i></div>
+          <div class="pillar-title">Convertir cada historia en inspiración</div>
+          <div class="pillar-short">Tu historia puede encender el camino de otros.</div>
+          <div class="pillar-expanded">
+            MINUME XVII debe convertirse en un escenario donde las experiencias personales
+            inspiran y motivan a otros jóvenes. Cada joven es una antorcha encendida.
+            Juntos para ser mejores.
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="deco-corner deco-barco" aria-hidden="true">
+      <img src="barco.png" alt="" class="barco" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════════════ ESFERAS ════════════════ -->
+  <section id="esferas">
+    <video class="esferas-video" autoplay muted loop playsinline aria-hidden="true" id="esferasVideoElement">
+      <source src="fondo-olimpo.mp4" type="video/mp4">
+    </video>
+    <div class="esferas-video-overlay" aria-hidden="true"></div>
+    <div class="section-inner">
+
+      <div class="esferas-header">
+        <div>
+          <div class="section-header">
+            <span class="label reveal">Marco Conceptual</span>
+            <h2 class="heading reveal">El Legado <br>del <em>Olimpo</em></h2>
+          </div>
+        </div>
+        <p class="esferas-intro reveal">
+          En la mitología griega, el mundo no se gobernaba desde un solo poder.
+          Así funciona el sistema internacional — y así se organiza MINUME XVII.
+          Cada comité pertenece a una esfera, a una fuerza del mundo.
+        </p>
+      </div>
+
+      <div class="esferas-grid" id="esferasGrid"></div>
+
+    </div>
+
+    <div class="deco-corner deco-timon" aria-hidden="true">
+      <img src="timon.png" alt="" class="timon" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- Esfera Modal -->
+  <div class="modal-overlay" id="esferaModal" role="dialog" aria-modal="true" aria-label="Detalle de esfera">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Cerrar">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ════════ QUOTE BREAK 2: MINUME no te dice ════════ -->
+  <div class="quote-break quote-break-hero" aria-hidden="false">
+    <div class="qb-hero-inner">
+      <div class="qb-hero-eyebrow">— El corazón del modelo —</div>
+      <blockquote class="qb-hero-phrase">
+        MINUME no te dice<br>
+        <strong>quién debes ser,</strong><br>
+        <em>te enfrenta para que<br>descubras quién eres.</em>
+      </blockquote>
+      <p class="qb-hero-body">
+        Cada esfera del Olimpo no actúa de forma uniforme —
+        cada una ejerce su influencia de manera distinta, dejando una marca particular.
+        De manera similar, cada comité, cada espacio y cada experiencia en MINUME
+        permite que el participante construya su propio legado indeleble.
+      </p>
+    </div>
+  </div>
+
+  <!-- ════════════════ ACADEMIA ════════════════ -->
+  <section id="academia">
+    <canvas class="academia-canvas" id="academiaCanvas" aria-hidden="true"></canvas>
+    <div class="academia-overlay" aria-hidden="true"></div>
+
+    <div class="academia-inner">
+
+      <div class="academia-header">
+        <div class="academia-header-left reveal">
+          <span class="label">Propuesta Académica</span>
+          <h2 class="heading">
+            Formación que<br>construye <em>legado</em>
+          </h2>
+          <p class="academia-intro">
+            La formación de los delegados no es un trámite operativo —
+            es el núcleo donde un MINUME comienza a dejar huellas.
+          </p>
+        </div>
+        <div class="academia-header-right reveal reveal-delay-1" aria-hidden="true">
+          <div class="acad-stat-pill">
+            <span class="asp-num">7</span>
+            <span class="asp-label">módulos de<br>formación</span>
+          </div>
+          <div class="acad-stat-pill">
+            <span class="asp-num">3</span>
+            <span class="asp-label">pilares<br>académicos</span>
+          </div>
+          <div class="acad-stat-pill acad-stat-gold">
+            <span class="asp-num">6</span>
+            <span class="asp-label">días de soporte<br>intensivo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="icen-block reveal">
+        <div class="icen-header">
+          <div class="icen-vela-wrap" aria-hidden="true">
+            <img src="barco.png" alt="" class="icen-vela-img" loading="lazy" decoding="async">
+          </div>
+          <h3 class="icen-title">¡Icen las Velas!</h3>
+          <p class="icen-sub">Los tres pilares que impulsan la formación transformadora</p>
+        </div>
+
+        <div class="icen-cards">
+          <div class="icen-card reveal reveal-delay-1">
+            <div class="icen-card-badge">PMA</div>
+            <h4 class="icen-card-name">Programa Modular Académico</h4>
+            <p class="icen-card-desc">
+              Siete módulos consecutivos que preparan al delegado en dimensiones
+              emocionales, académicas y metodológicas. Cada etapa funciona como
+              base para la siguiente.
+            </p>
+          </div>
+
+          <div class="icen-card reveal reveal-delay-2">
+            <div class="icen-card-badge">TDG</div>
+            <h4 class="icen-card-name">Taller de Dominio General</h4>
+            <p class="icen-card-desc">
+              Formadores especializados garantizan que todos los delegados reciban
+              una base común en materia académica, ética y procedimental sin importar
+              su institución de origen.
+            </p>
+          </div>
+
+          <div class="icen-card reveal reveal-delay-3">
+            <div class="icen-card-badge">CM</div>
+            <h4 class="icen-card-name">Cuerpo de Mentores</h4>
+            <p class="icen-card-desc">
+              Apoyo estructurado por regionales y necesidades académicas específicas.
+              Ningún delegado enfrenta el proceso de manera aislada,
+              independientemente de su procedencia.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="academia-tabs-wrap reveal">
+        <div class="academia-tabs-header">
+          <div class="academia-tabs-intro">
+            <h3 class="academia-tabs-title">El ecosistema formativo, en detalle</h3>
+            <p class="academia-tabs-sub">Antes, durante y después — cada momento tiene estructura</p>
+          </div>
+          <div class="tab-nav" role="tablist">
+            <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('antes',this)">
+              <i class="fa-solid fa-hourglass-start" aria-hidden="true"></i> Antes
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('durante',this)">
+              <i class="fa-solid fa-bolt" aria-hidden="true"></i> Durante
+            </button>
+            <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('chatbot',this)">
+              <i class="fa-solid fa-robot" aria-hidden="true"></i> Chatbot IA
+            </button>
+          </div>
+        </div>
+
+        <div class="tab-panel active" id="tab-antes" role="tabpanel">
+          <p class="tab-intro-text">
+            El <strong>Programa Modular Académico (PMA)</strong> prepara a cada delegado en
+            7 módulos secuenciales. El <strong>Taller de Dominio General (TDG)</strong>
+            estandariza la base académica a nivel nacional.
+          </p>
+          <div class="modules-grid">
+            <div class="module-card">
+              <div class="module-num">01</div>
+              <div class="module-icon"><i class="fa-solid fa-gavel" aria-hidden="true"></i></div>
+              <div class="module-title">Taller de Dominio General</div>
+              <div class="module-desc">Procedimiento parlamentario, redacción, negociación y diplomacia.</div>
+            </div>
+            <div class="module-card">
+              <div class="module-num">02</div>
+              <div class="module-icon"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></div>
+              <div class="module-title">Investigación Estratégica</div>
+              <div class="module-desc">Manejo de fuentes confiables y análisis situacional.</div>
+            </div>
+            <div class="module-card">
+              <div class="module-num">03</div>
+              <div class="module-icon"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></div>
+              <div class="module-title">Redacción Académica</div>
+              <div class="module-desc">Documentos oficiales, cláusulas y proyectos de resolución.</div>
+            </div>
+            <div class="module-card">
+              <div class="module-num">04</div>
+              <div class="module-icon"><i class="fa-solid fa-microphone" aria-hidden="true"></i></div>
+              <div class="module-title">Oratoria Diplomática</div>
+              <div class="module-desc">Estructura del discurso, tiempo, impacto y presencia.</div>
+            </div>
+            <div class="module-card">
+              <div class="module-num">05</div>
+              <div class="module-icon"><i class="fa-solid fa-handshake" aria-hidden="true"></i></div>
+              <div class="module-title">Negociación Avanzada</div>
+              <div class="module-desc">Consensos, posiciones, bloqueos y formación de alianzas.</div>
+            </div>
+            <div class="module-card">
+              <div class="module-num">06</div>
+              <div class="module-icon"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></div>
+              <div class="module-title">Liderazgo e Inteligencia Emocional</div>
+              <div class="module-desc">Autoconocimiento, manejo del estrés y empatía diplomática.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-durante" role="tabpanel">
+          <p class="tab-intro-text">
+            La Secretaría Académica activa un ecosistema de apoyo intensivo durante los
+            <strong>5 días más intensos de MINUME</strong>.
+          </p>
+          <div class="durante-grid">
+            <div class="durante-card">
+              <div class="durante-icon"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></div>
+              <div class="durante-title">Aulas de Asesoría Exprés</div>
+              <div class="durante-desc">Expertos académicos atienden dudas técnicas urgentes durante el evento.</div>
+            </div>
+            <div class="durante-card">
+              <div class="durante-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></div>
+              <div class="durante-title">Mentoría por Esferas</div>
+              <div class="durante-desc">Cada Esfera del Olimpo tiene un equipo académico dedicado y coherente.</div>
+            </div>
+            <div class="durante-card">
+              <div class="durante-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+              <div class="durante-title">Brigadas de Bienestar</div>
+              <div class="durante-desc">Prevención de colapsos y ansiedad. La salud mental importa.</div>
+            </div>
+            <div class="durante-card">
+              <div class="durante-icon"><i class="fa-solid fa-bolt" aria-hidden="true"></i></div>
+              <div class="durante-title">Másterclasses Magistrales</div>
+              <div class="durante-desc">Cápsulas impartidas por expertos en sus comités. Leadership Talks.</div>
+            </div>
+            <div class="durante-card">
+              <div class="durante-icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></div>
+              <div class="durante-title">Cuerpo de Mentores</div>
+              <div class="durante-desc">Guía emocional y académica segmentada por regionales y comités.</div>
+            </div>
+            <div class="durante-card">
+              <div class="durante-icon"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
+              <div class="durante-title">Diagnóstico Pre-MINUME</div>
+              <div class="durante-desc">Radar pedagógico para detectar brechas y activar estrategias correctivas.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="tab-chatbot" role="tabpanel">
+          <div class="chatbot-grid">
+            <div class="chatbot-info">
+              <h3>Chatbot Académico Transversal</h3>
+              <p>Herramienta inteligente para respuestas inmediatas, uniformes y verificadas sobre procedimiento parlamentario y normativa del PLE-RD.</p>
+              <p>Alimentado con información aprobada por la Oficina del PLE-RD. Elimina asimetrías informativas y desatura a las Mesas Directivas.</p>
+              <div class="chatbot-examples">
+                <div class="chat-example"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> ¿Cómo se redacta una cláusula operativa?</div>
+                <div class="chat-example"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> ¿Cuántos avales necesito para un proyecto?</div>
+                <div class="chat-example"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> ¿Qué significa "presente y votando"?</div>
+                <div class="chat-example"><i class="fa-solid fa-circle-question" aria-hidden="true"></i> ¿Cómo identificar una fuente primaria?</div>
+              </div>
+            </div>
+            <div class="chatbot-preview">
+              <div class="chat-header">
+                <div class="chat-dot" aria-hidden="true"></div>
+                Chatbot · MINUME XVII
+              </div>
+              <div class="chat-bubbles" id="chatBubbles">
+                <div class="bubble bot">Hola, soy el asistente académico de MINUME. ¿En qué puedo ayudarte?</div>
+                <div class="bubble user">¿Cuántas cláusulas preambulares necesito?</div>
+                <div class="bubble bot">Según el Manual del PLE-RD, no hay mínimo establecido, pero se recomiendan entre 4 y 7 para sustentar el contexto del tema…</div>
+                <div class="bubble user">¿Y las operativas?</div>
+                <div class="bubble bot">Las operativas tienen mínimo recomendado de 3. Cada una debe iniciar con un verbo activo en infinitivo…</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tracker-block reveal">
+        <div class="tracker-block-header">
+          <span class="label">Gestión Operativa</span>
+          <h3 class="tracker-title">Tracker Digital de Progreso</h3>
+          <p class="tracker-subtitle">"Un MINUME que Deja Huellas" — monitoreo en tiempo real</p>
+        </div>
+        <div class="tracker-content">
+          <div class="tracker-text">
+            <p class="tracker-body">
+              Proponemos la implementación de un <strong>Tracker Digital de Progreso</strong>
+              diseñado para medir objetivamente el desarrollo diario de cada comité.
+              Proporciona al Secretariado información <strong>concreta, cuantificable y
+              actualizada</strong> sobre el avance académico en tiempo real.
+            </p>
+            <div class="tracker-features">
+              <div class="tf-item"><i class="fa-solid fa-chart-line"></i> Monitoreo en tiempo real</div>
+              <div class="tf-item"><i class="fa-solid fa-shield-halved"></i> Enfoque preventivo</div>
+              <div class="tf-item"><i class="fa-solid fa-magnifying-glass-chart"></i> Comparativa entre comités</div>
+              <div class="tf-item"><i class="fa-solid fa-triangle-exclamation"></i> Alertas de rezago</div>
+            </div>
+          </div>
+          <div class="tracker-img-wrap">
+            <img src="tracker.png" alt="Interfaz del Tracker Digital de Progreso MINUME" class="tracker-img tracker-img-clickable" id="trackerImg" role="button" tabindex="0" aria-label="Ver imagen ampliada del Tracker" loading="lazy" decoding="async">
+            <div class="tracker-img-label"><i class="fa-solid fa-magnifying-glass-plus" style="margin-right:.35rem;opacity:.6"></i>Clic para ampliar</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tracker-lightbox" id="trackerLightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada del tracker">
+      <button class="tracker-lb-close" id="trackerLbClose" aria-label="Cerrar"><i class="fa-solid fa-xmark"></i></button>
+      <img src="tracker.png" alt="Tracker Digital MINUME XVII ampliado" class="tracker-lb-img" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════ SLIDING PHOTO GALLERY ════════ -->
+  <div class="photo-gallery-band" aria-label="Galería de imágenes MINUME">
+    <div class="gallery-track" id="galleryTrack" aria-hidden="true">
+      <!-- Images injected by app.js -->
+    </div>
+  </div>
+
+  <!-- ════════════════ ACTIVIDADES ════════════════ -->
+  <section id="actividades">
+    <div class="gatsby-curtain" aria-hidden="true"></div>
+    <div class="gatsby-era-stamp" aria-hidden="true">1920</div>
+    <canvas class="gatsby-champagne-canvas" id="champagneCanvas" aria-hidden="true"></canvas>
+    <div class="sparkles-canvas" id="sparklesCanvas" aria-hidden="true"></div>
+    <div class="gatsby-glow" aria-hidden="true"></div>
+    <div class="section-inner">
+      <div class="gatsby-ornament" aria-hidden="true">
+        <div class="gatsby-ornament-diamond"></div>
+        <div class="gatsby-ornament-diamond"></div>
+        <div class="gatsby-ornament-diamond"></div>
+      </div>
+
+      <div class="gatsby-grid">
+        <div class="gatsby-left-col">
+          <div class="section-header">
+            <span class="label reveal">Actividad Social</span>
+            <div class="gatsby-logo-wrap reveal">
+              <img src="gatsby.png" alt="El Gran Gatsby — Un viaje al pasado al universo de los años 20" class="gatsby-logo-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <p class="gatsby-sub reveal">
+            Inspirada en la opulencia de los años 20, recrea la atmósfera Art Deco
+            con máscaras sofisticadas, música jazz y detalles dorados.
+          </p>
+          <div class="gatsby-details"></div>
+        </div>
+
+        <div class="gatsby-mosaic reveal">
+          <div class="gatsby-tile gatsby-tile-deco gatsby-tile-mascara">
+            <img src="mascara-x.png" alt="Desfile de Máscaras" class="tile-bg-img" loading="lazy" decoding="async">
+            <div class="tile-overlay-content">
+              <div class="tile-icon"><i class="fa-solid fa-masks-theater" aria-hidden="true"></i></div>
+              <div class="tile-label">Desfile de Máscaras</div>
+            </div>
+          </div>
+          <div class="gatsby-tile gatsby-tile-deco">
+            <img src="artdeco-x.png" alt="Photobooth Art Deco" class="tile-bg-img" loading="lazy" decoding="async">
+            <div class="tile-overlay-content">
+              <div class="tile-icon"><i class="fa-solid fa-camera-retro" aria-hidden="true"></i></div>
+              <div class="tile-label">Photobooth Art Deco</div>
+            </div>
+          </div>
+          <div class="gatsby-tile gatsby-tile-deco">
+            <img src="gala-x.png" alt="Noche de Gala" class="tile-bg-img" loading="lazy" decoding="async">
+            <div class="tile-overlay-content">
+              <div class="tile-icon"><i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i></div>
+              <div class="tile-label">Noche de Gala</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="deco-corner deco-timon" aria-hidden="true">
+      <img src="timon.png" alt="" class="timon" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════════════ EJE 2030 ════════════════ -->
+  <section id="eje2030">
+    <canvas class="eje-tech-canvas" id="ejeTechCanvas" aria-hidden="true"></canvas>
+    <div class="eje-tech-overlay" aria-hidden="true"></div>
+    <div class="section-inner" style="position:relative;z-index:2">
+
+      <div class="section-header">
+        <span class="label reveal">Eje Temático Central</span>
+        <h2 class="heading reveal">
+          Diplomacia, Innovación<br>y <em>Sostenibilidad 2030</em>
+        </h2>
+      </div>
+
+      <div class="eje-grid">
+        <div class="eje-card reveal reveal-delay-1">
+          <div class="eje-icon-wrap"><i class="fa-solid fa-microchip" aria-hidden="true"></i></div>
+          <div class="eje-title">Inteligencia Artificial y Gobernanza Global</div>
+          <div class="eje-text">Los sistemas de IA transforman las relaciones internacionales, los mercados y los derechos humanos. MINUME XVII debate cómo gobernar estas fuerzas.</div>
+        </div>
+        <div class="eje-card reveal reveal-delay-2">
+          <div class="eje-icon-wrap"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></div>
+          <div class="eje-title">ODS 4 — Educación de Calidad</div>
+          <div class="eje-text">Garantizar educación inclusiva, equitativa y de calidad. El desarrollo sostenible empieza en las aulas. MINUME XVII es un ejercicio vivo de este objetivo.</div>
+        </div>
+        <div class="eje-card reveal reveal-delay-3">
+          <div class="eje-icon-wrap"><i class="fa-solid fa-earth-americas" aria-hidden="true"></i></div>
+          <div class="eje-title">Soluciones Reales para Retos Globales</div>
+          <div class="eje-text">De la teoría a la acción. Los comités trabajarán propuestas concretas y viables para los desafíos más urgentes de la Agenda 2030.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="deco-corner deco-barco" aria-hidden="true">
+      <img src="barco.png" alt="" class="barco" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════════════ TE INVITO A DEJAR HUELLAS ════════════════ -->
+  <section id="cierre">
+    <div class="cierre-inner">
+      <div class="cierre-content">
+        <span class="label label-light reveal">Mensaje de Henry</span>
+        <h2 class="heading heading-light reveal">
+          Te invito a dejar<br><em>huellas conmigo</em>
+        </h2>
+        <p class="cierre-text reveal reveal-delay-1">
+          No te invito a seguirme. Te invito a construir conmigo. Un MINUME que deja huellas
+          no puede construirse desde un solo lugar — necesita de cada delegado, cada mesa directiva,
+          cada voluntario que decida apostar por algo que trascienda el modelo.
+        </p>
+        <p class="cierre-text reveal reveal-delay-1">
+          Seamos el MINUME que alguien recuerde dentro de diez años. El que les cambió algo.
+          El que les demostró que podían. Ese es el legado que buscamos.
+        </p>
+        <div class="cierre-firma reveal reveal-delay-2">
+          — Henry Gómez, Candidato a Secretario General Académico · MINUME XVII
+        </div>
+        <a href="#bid" class="btn-primary reveal reveal-delay-2" style="margin-top:1.5rem">
+          Ver la propuesta completa <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="cierre-photo-wrap" aria-hidden="true">
+        <img src="henry-dedo.jpeg" alt="Henry Gómez" class="cierre-photo" loading="lazy" decoding="async">
+        <div class="cierre-photo-overlay"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ BID ════════════════ -->
+  <section id="bid">
+    <canvas class="section-canvas" id="bidCanvas" aria-hidden="true"></canvas>
+
+    <div class="section-inner">
+      <div class="bid-grid">
+
+        <!-- BID BOOK -->
+        <div class="bid-mockup reveal">
+          <div class="bid-book">
+            <div class="bid-book-cover">
+              <img src="bid.png" alt="BID — Bases e Iniciativas de Desarrollo" class="bid-cover-img" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <!-- BID INFO -->
+        <div class="bid-info reveal reveal-delay-1">
+          <span class="label">Documento Oficial</span>
+          <h2 class="heading">Base de Información<br><em>Documentada</em></h2>
+
+          <p class="bid-desc reveal reveal-delay-2">
+            Si todo lo que viste hasta aquí te emocionó, esto es lo que lo sostiene.
+            El BID es el documento que convierte la visión en estructura — cada comité,
+            cada agenda, cada detalle pensado para que este MINUME no solo se viva,
+            sino que <em>deje huellas</em> en quienes lo protagonicen.
+          </p>
+
+          <a href="https://heyzine.com/flip-book/725e413b32.html" target="_blank" rel="noopener" class="btn-primary bid-btn" id="bidAccessBtn">
+            <i class="fa-solid fa-file-pdf bid-btn-icon" aria-hidden="true"></i>
+            <span>Acceder al BID</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="deco-corner deco-timon" aria-hidden="true">
+      <img src="timon.png" alt="" class="timon" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- ════════════════ CTA SOCIAL ════════════════ -->
+  <section id="cta-social">
+    <div class="cta-photo-bg" aria-hidden="true">
+      <img src="foto14.jpg" alt="" class="cta-photo-img" loading="lazy" decoding="async">
+    </div>
+    <div class="cta-gallery-bg" id="ctaGalleryBg" aria-hidden="true"></div>
+    <div class="cta-gallery-overlay" aria-hidden="true"></div>
+    <div class="cta-social-inner">
+      <p class="cta-quote reveal">
+        "No me mueven los cargos por sí solos.<br>Me mueven los procesos bien hechos."
+      </p>
+      <span class="cta-author reveal">— Henry Gómez · Candidato a Secretario General Académico</span>
+      <div class="cta-links reveal reveal-delay-1">
+        <a href="https://www.instagram.com/_henryluis_/" target="_blank" rel="noopener" class="cta-social-btn cta-ig">
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          Conoce más sobre tu candidato
+        </a>
+        <a href="https://chat.whatsapp.com/EEcL541IwBnCPlRJOpni72?mode=gi_t" target="_blank" rel="noopener" class="cta-social-btn cta-wa">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          Empieza a dejar huellas conmigo
+        </a>
+      </div>
+      <a href="#hero" class="btn-primary reveal reveal-delay-2" style="margin-top:1.5rem">
+        Volver al inicio
+        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer>
+    <div class="footer-left">
+      <img class="footer-logo" src="logo.png" alt="MINUME XVII">
+      <span class="footer-name">MINUME XVII</span>
+    </div>
+    <div class="footer-copy">Henry Gómez SGA · Todos los derechos reservados © 2026</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
